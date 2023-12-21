@@ -31,8 +31,6 @@ defmodule LoEx.Nanoid do
 
   """
   def to_uuid(nanoid) do
-    nanoid
-
     with {:ok, number} <- base62_decode(nanoid) do
       {:ok, number} = number_to_uuid(number)
       number
