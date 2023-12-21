@@ -1,6 +1,6 @@
-defmodule Loex do
+defmodule LoEx do
   @moduledoc """
-  Documentation for `Loex`.
+  Documentation for `LoEx`.
   """
 
   @doc """
@@ -8,7 +8,7 @@ defmodule Loex do
 
   ## Examples
 
-      iex> Loex.hello()
+      iex> LoEx.hello()
       :world
 
   """
