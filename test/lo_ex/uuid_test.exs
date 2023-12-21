@@ -43,4 +43,41 @@ defmodule LoEx.UUIDTest do
       assert String.at(uuid, 14) == "7"
     end
   end
+
+  describe "to_nanoid" do
+    setup do
+      %{
+        uuids: %{
+          nil => "00000000-0000-0000-0000-000000000000",
+          1 => "92fef5d6-c639-11eb-b8bc-0242ac130003",
+          # generated in the :dns namespace, name "test"
+          3 => "45a113ac-c7f2-30b0-90a5-a399ab912716",
+          4 => "e5a4a3c3-45a7-4d5a-9809-e253a6ff8da2",
+          # generated in the :dns namespace, name "test"
+          5 => "4be0643f-1d98-573b-97cd-ca98a65347dd",
+          6 => "1e7126af-f130-6780-adb4-8bbe7368fc2f",
+          7 => "0182b66c-29e7-7ae8-b60e-4b669fe07c77"
+        },
+        nanoids: %{
+          nil => "0000000000000000000000",
+          1 => "4TNObmjsOQepLv93GfuHi7",
+          3 => "27O58d9wCLXM1oIeS9dXug",
+          4 => "6zKTyJTThjfF83bgQh5lyM",
+          5 => "2JAyFT8G5qNQKnU3e9ZV0f",
+          6 => "0vRTlBTpNXuuJL4SppQlYt",
+          7 => "02qj8zjMDI9Pm0HC8208yl"
+        }
+      }
+    end
+
+    test "converts a uuid to a nanoid", %{uuids: uuids, nanoids: nanoids} do
+      assert LoEx.UUID.to_nanoid(uuids[nil]) == nanoids[nil]
+      assert LoEx.UUID.to_nanoid(uuids[1]) == nanoids[1]
+      assert LoEx.UUID.to_nanoid(uuids[3]) == nanoids[3]
+      assert LoEx.UUID.to_nanoid(uuids[4]) == nanoids[4]
+      assert LoEx.UUID.to_nanoid(uuids[5]) == nanoids[5]
+      assert LoEx.UUID.to_nanoid(uuids[6]) == nanoids[6]
+      assert LoEx.UUID.to_nanoid(uuids[7]) == nanoids[7]
+    end
+  end
 end
