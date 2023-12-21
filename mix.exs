@@ -4,7 +4,7 @@ defmodule LoEx.MixProject do
   def project do
     [
       app: :lo_ex,
-      version: "0.0.1",
+      version: "0.0.2",
       elixir: "~> 1.15",
       start_permanent: Mix.env() == :prod,
       build_embedded: Mix.env() == :prod,
