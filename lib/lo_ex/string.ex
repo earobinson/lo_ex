@@ -3,8 +3,6 @@ defmodule LoEx.String do
   Documentation for `LoEx.String`.
   """
 
-  use LoEx.Constants
-
   @doc """
   Returns the index of the first occurrence of the pattern in the string, or nil if not found.
 
